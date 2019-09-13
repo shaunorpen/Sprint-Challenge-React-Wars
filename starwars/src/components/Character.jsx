@@ -48,7 +48,6 @@ function Character (props) {
             <h2>ID Card: {props.data.name}</h2>
             <div className='detailsDiv'>
                 <div className='leftDiv'>
-                    <p>Name: {props.data.name}</p>
                     <p>Gender: {capitalizeFirstLetter(props.data.gender)}</p>
                     <p>Height: {props.data.height}cm</p>
                     <p>Weight: {props.data.mass}kg</p>
