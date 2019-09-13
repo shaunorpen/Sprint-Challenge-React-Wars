@@ -27,11 +27,16 @@ const App = () => {
   }, []);
 
   const StyledApp = sc.div`
+    margin: 0 auto;
+    padding: 2rem;
     text-align: center;
 
     h1 {
+      font-size: 5rem;
+      font-weight: bold;
       color: #443e3e;
       text-shadow: 1px 1px 5px #fff;
+      margin-bottom: 2rem;
     }
   `;
   
