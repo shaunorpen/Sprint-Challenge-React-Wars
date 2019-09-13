@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
+import sc from 'styled-components';
+// import './App.css';
 import Characters from './components/Characters';
 
 const App = () => {
@@ -25,27 +26,35 @@ const App = () => {
       });
   }, []);
 
+  const StyledApp = sc.div`
+    text-align: center;
+
+    h1 {
+      color: #443e3e;
+      text-shadow: 1px 1px 5px #fff;
+    }
+  `;
   
   if (apiResponse) {
     return (
-      <div className="App">
-        <h1 className="Header">React Wars</h1>
+      <StyledApp>
+        <h1>React Wars</h1>
         <Characters characterData={apiResponse.data.results} />
-      </div>
+      </StyledApp>
     );
   } else if (apiError) {
     return (
-      <div className="App">
-        <h1 className="Header">React Wars</h1>
+      <StyledApp>
+        <h1>React Wars</h1>
         <p>There's been an error.</p>
-      </div>
+      </StyledApp>
     );
   } else {
     return (
-      <div className="App">
-        <h1 className="Header">React Wars</h1>
+      <StyledApp>
+        <h1>React Wars</h1>
         <p>Loading...</p>
-      </div>
+      </StyledApp>
     );
   }
 
