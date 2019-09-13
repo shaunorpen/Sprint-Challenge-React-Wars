@@ -34,6 +34,14 @@ const StyledCharacter = sc.div`
     }
 `;
 
+function capitalizeFirstLetter(string) {
+    if (string !== 'n/a') {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    } else {
+        return string;
+    }
+}
+
 function Character (props) {
     return (
         <StyledCharacter>
@@ -41,7 +49,7 @@ function Character (props) {
             <div className='detailsDiv'>
                 <div className='leftDiv'>
                     <p>Name: {props.data.name}</p>
-                    <p>Gender: {props.data.gender}</p>
+                    <p>Gender: {capitalizeFirstLetter(props.data.gender)}</p>
                     <p>Height: {props.data.height}cm</p>
                     <p>Weight: {props.data.mass}kg</p>
                 </div>
