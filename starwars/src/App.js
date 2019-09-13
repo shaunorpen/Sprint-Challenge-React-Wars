@@ -42,7 +42,8 @@ const App = () => {
     }
 
     > p {
-      font-size: 2rem;
+      font-size: 3rem;
+      font-weight: bold;
       margin-bottom: 1rem;
       color: #443e3e;
     }
@@ -120,7 +121,7 @@ const App = () => {
     return (
       <StyledApp>
         <h1>React Wars</h1>
-        <p>There's been an error.</p>
+        <p>There's been an error. Please try again.</p>
         <p>{apiError.message}</p>
       </StyledApp>
     );
