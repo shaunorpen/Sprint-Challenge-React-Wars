@@ -8,7 +8,7 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
-  const [apiUrl, setApiUrl] = useState('https://swapi.co/api/people/?page=1');
+  const [apiUrl, setApiUrl] = useState('https://swapi.co/api/people/');
   const [apiResponse, setApiResponse] = useState();
   const [apiError, setApiError] = useState();
 
@@ -39,6 +39,12 @@ const App = () => {
       color: #443e3e;
       text-shadow: 1px 1px 5px #fff;
       margin-bottom: 2rem;
+    }
+
+    > p {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #443e3e;
     }
 
     button {
@@ -115,6 +121,7 @@ const App = () => {
       <StyledApp>
         <h1>React Wars</h1>
         <p>There's been an error.</p>
+        <p>{apiError.message}</p>
       </StyledApp>
     );
   } else {
