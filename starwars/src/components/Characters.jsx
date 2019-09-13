@@ -8,7 +8,6 @@ const StyledCharacters = sc.div`
 `;
 
 function Characters (props) {
-    console.log(props);
     return (
         <StyledCharacters>
             {props.characterData.map(character => <Character data={character} key={character.name} />)}

@@ -8,7 +8,7 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
-  const apiUrl = 'https://swapi.co/api/people/';
+  const [apiUrl, setApiUrl] = useState('https://swapi.co/api/people/?page=1');
   const [apiResponse, setApiResponse] = useState();
   const [apiError, setApiError] = useState();
 
@@ -19,12 +19,14 @@ const App = () => {
   useEffect(() => {
     axios.get(apiUrl)
       .then(response => {
+        // debugger
         setApiResponse(response);
       })
       .catch(error => {
+        // debugger
         setApiError(error);
       });
-  }, []);
+  }, [apiUrl]);
 
   const StyledApp = sc.div`
     margin: 0 auto;
@@ -49,6 +51,10 @@ const App = () => {
       background: rgba(255,255,255,0.5);
       border: 1px solid white;
       margin-top: 2rem;
+
+      :hover {
+        background: rgba(255,255,255,0.7);
+      }
     }
   `;
   
@@ -58,8 +64,8 @@ const App = () => {
         <h1>React Wars</h1>
         <Characters characterData={apiResponse.data.results} />
         <div>
-          <button>Previous</button>
-          <button>Next</button>
+          <button onClick={() => setApiUrl(apiResponse.data.previous)} >Previous</button>
+          <button onClick={() => setApiUrl(apiResponse.data.next)} >Next</button>
         </div>
       </StyledApp>
     );
