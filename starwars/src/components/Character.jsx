@@ -4,9 +4,9 @@ import sc from 'styled-components';
 const StyledCharacter = sc.div`
     min-width: 40rem;
     flex-grow: 1;
-    border: 2px solid #443e3e;
+    border: 1px solid white;
     margin: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
     text-align: left;
     background: rgba(255,255,255,0.5);
     display: flex;
@@ -14,6 +14,7 @@ const StyledCharacter = sc.div`
 
     .detailsDiv {
         display: flex;
+        margin: 2rem 0;
     }
 
     .leftDiv, .rightDiv {
@@ -45,7 +46,7 @@ function capitalizeFirstLetter(string) {
 function Character (props) {
     return (
         <StyledCharacter>
-            <h2>ID Card: {props.data.name}</h2>
+            <h2>{props.data.name}</h2>
             <div className='detailsDiv'>
                 <div className='leftDiv'>
                     <p>Gender: {capitalizeFirstLetter(props.data.gender)}</p>

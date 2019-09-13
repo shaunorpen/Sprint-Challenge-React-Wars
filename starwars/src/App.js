@@ -38,6 +38,18 @@ const App = () => {
       text-shadow: 1px 1px 5px #fff;
       margin-bottom: 2rem;
     }
+
+    button {
+      font-size: 3rem;
+      margin: 1rem;
+      padding: 1rem;
+      width: 20rem;
+      border-radius: 5rem;
+      color: #443e3e;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid white;
+      margin-top: 2rem;
+    }
   `;
   
   if (apiResponse) {
@@ -45,6 +57,10 @@ const App = () => {
       <StyledApp>
         <h1>React Wars</h1>
         <Characters characterData={apiResponse.data.results} />
+        <div>
+          <button>Previous</button>
+          <button>Next</button>
+        </div>
       </StyledApp>
     );
   } else if (apiError) {
